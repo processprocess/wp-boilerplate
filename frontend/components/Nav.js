@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Link from "next/link";
 import { Config } from "../config.js";
 
-const linkStyle = {
-  marginRight: 15
-};
-
 class Nav extends Component {
   constructor() {
     super();
@@ -21,7 +17,7 @@ class Nav extends Component {
       if (item.object === "custom") {
         return (
           <Link href={item.url} key={item.ID}>
-            <a style={linkStyle}>{item.title}</a>
+            <a>{item.title}</a>
           </Link>
         );
       }
@@ -33,7 +29,7 @@ class Nav extends Component {
           href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
           key={item.ID}
         >
-          <a style={linkStyle}>{item.title}</a>
+          <a>{item.title}</a>
         </Link>
       );
     });
@@ -41,7 +37,7 @@ class Nav extends Component {
     return (
       <div>
         <Link href="/">
-          <a style={linkStyle}>Home</a>
+          <a>Home</a>
         </Link>
         {menuItems}
       </div>
